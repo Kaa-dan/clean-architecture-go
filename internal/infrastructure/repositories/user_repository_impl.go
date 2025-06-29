@@ -40,3 +40,7 @@ func NewUserRepository(client *mongo.Client, dbName string) *userRepository {
 		collection: collection,
 	}
 }
+
+func (r *userRepository) Create(ctx context.Context,user *) error {
+
+}

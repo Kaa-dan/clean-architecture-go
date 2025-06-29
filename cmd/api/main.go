@@ -1,9 +1,11 @@
 package main
 
 import (
+	"context"
 	"log"
 
 	"github.com/kaa-dan/clean-architecture-go/internal/config"
+	"github.com/kaa-dan/clean-architecture-go/internal/domain/repositories"
 	"github.com/kaa-dan/clean-architecture-go/internal/infrastructure/database"
 	"github.com/kaa-dan/clean-architecture-go/pkg/logger"
 )
@@ -22,4 +24,11 @@ func main() {
 	if err != nil {
 		log.Fatal("Failed to connect to database:", err)
 	}
+
+	defer db.Disconnect(context.Background())
+
+	// Initialize repositories
+
+	userRepo := repositories.NewUserRepository(db, cfg.DatabaseName)
+
 }

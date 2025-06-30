@@ -3,6 +3,8 @@ package routes
 import (
 	"time"
 
+	"github.com/gin-contrib/cors"
+	"github.com/gin-contrib/requestid"
 	"github.com/gin-gonic/gin"
 	"github.com/kaa-dan/clean-architecture-go/internal/infrastructure/security"
 	"github.com/kaa-dan/clean-architecture-go/internal/interfaces/handlers"

@@ -31,4 +31,5 @@ func main() {
 
 	userRepo := repositories.NewUserRepository(db, cfg.DatabaseName)
 
+	// Initialize use cases
 }

@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/kaa-dan/clean-architecture-go/internal/domain/enitities"
+	"github.com/kaa-dan/clean-architecture-go/internal/domain/entities"
 	"github.com/kaa-dan/clean-architecture-go/pkg/errors"
 )
 
@@ -28,7 +28,7 @@ func NewJWTManager(secretKey string, expiryHours int) *JWTManager {
 	}
 }
 
-func (j *JWTManager) GenerateToken(user *enitities.User) (string, error) {
+func (j *JWTManager) GenerateToken(user *entities.User) (string, error) {
 	claims := &Claims{
 		UserID:   user.ID.Hex(),
 		Email:    user.Email,

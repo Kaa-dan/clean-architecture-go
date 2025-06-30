@@ -34,4 +34,6 @@ func main() {
 
 	// Initialize use cases
 	jwtManager := security.NewJWTManager(cfg.JWTSecret, cfg.JWTExpiryHours)
+	passwordManager := security.NewPasswordManger()
+	userUseCases := usecases.NewUserUseCase(userRepo, jwtManager, passwordManager)
 }

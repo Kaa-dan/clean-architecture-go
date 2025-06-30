@@ -7,6 +7,7 @@ import (
 	"github.com/kaa-dan/clean-architecture-go/internal/config"
 	"github.com/kaa-dan/clean-architecture-go/internal/infrastructure/database"
 	"github.com/kaa-dan/clean-architecture-go/internal/infrastructure/repositories"
+	"github.com/kaa-dan/clean-architecture-go/internal/infrastructure/security"
 	"github.com/kaa-dan/clean-architecture-go/pkg/logger"
 )
 
@@ -32,4 +33,5 @@ func main() {
 	userRepo := repositories.NewUserRepository(db, cfg.DatabaseName)
 
 	// Initialize use cases
+	jwtManager := security.NewJWTManager(cfg.JWTSecret, cfg.JWTExpiryHours)
 }

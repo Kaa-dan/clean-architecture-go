@@ -85,7 +85,8 @@ A robust REST API built with Go, Gin, and MongoDB following Clean Architecture p
 1. **Clone the repository**
 ```bash
 git clone <repository-url>
-cd user-api
+cd clean-architecture-go
+
 ```
 
 2. **Install dependencies**

@@ -2,9 +2,11 @@ package repositories
 
 import (
 	"context"
+
 	"time"
 
 	"github.com/kaa-dan/clean-architecture-go/internal/domain/enitities"
+	"github.com/kaa-dan/clean-architecture-go/pkg/errors"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -50,7 +52,7 @@ func (r *userRepository) Create(ctx context.Context, user *enitities.User) error
 	result, err := r.collection.InsertOne(ctx, user)
 	if err != nil {
 		if mongo.IsDuplicateKeyError(err) {
-			return errors.ErrUserAlredyExitst
+			return errors.ErrUserNotFound
 		}
 		return err
 	}

@@ -1,12 +1,13 @@
-package usercases
+package usecases
 
 import (
 	"context"
 	"time"
 
 	"github.com/kaa-dan/clean-architecture-go/internal/domain/entities"
+	"github.com/kaa-dan/clean-architecture-go/internal/domain/repositories"
 	"github.com/kaa-dan/clean-architecture-go/internal/domain/services"
-	"github.com/kaa-dan/clean-architecture-go/internal/infrastructure/repositories"
+
 	"github.com/kaa-dan/clean-architecture-go/internal/infrastructure/security"
 	"github.com/kaa-dan/clean-architecture-go/pkg/errors"
 	"go.mongodb.org/mongo-driver/bson/primitive"

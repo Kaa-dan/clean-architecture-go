@@ -38,7 +38,7 @@ func (j *JWTManager) GenerateToken(user *entities.User) (string, error) {
 			ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Duration(j.expiryHours) * time.Hour)),
 			IssuedAt:  jwt.NewNumericDate(time.Now()),
 			NotBefore: jwt.NewNumericDate(time.Now()),
-			Issuer:    "user-api",
+			Issuer:    "clean-architecture-go",
 			Subject:   user.ID.Hex(),
 		},
 	}
